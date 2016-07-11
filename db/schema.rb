@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,25 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108125006) do
+ActiveRecord::Schema.define(version: 20141004134727) do
 
-  create_table "options", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "options", force: :cascade do |t|
     t.string   "title"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "secret"
   end
 
-  create_table "questions", force: true do |t|
+  create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.string   "secret"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "scheme",     default: "web"
   end
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.string   "secret"
     t.integer  "question_id"
     t.integer  "option_id"

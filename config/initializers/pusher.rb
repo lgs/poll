@@ -5,3 +5,4 @@ Pusher.logger = Rails.logger
 
 Pusher.host = ENV['PUSHER_API_HOST']
 Pusher.port = Integer(ENV['PUSHER_API_PORT'])
+
